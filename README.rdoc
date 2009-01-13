@@ -1,0 +1,13 @@
+= slideshare
+
+A Ruby wrapper library for the SlideShare API
+
+== Requirements
+
+You will need to install HTTParty[http://github.com/jnunemaker/httparty/tree/master] and Curb[http://curb.rubyforge.org/] gems.
+
+== Caveats
+
+This gem is still in its infancy.
+
+copyright (c) 2009 Saiku Desarrollos S.L., released under the MIT license
