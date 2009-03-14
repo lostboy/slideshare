@@ -61,6 +61,18 @@ module SlideShare
       base.send :get, "/get_slideshow", options.merge(:slideshow_id => id)
     end
     
+    # Returns hash representing the user requests and an array of their slideshows
+    # Takes the following options.
+    #
+    # * <tt>:username</tt> - Slideshare username of the user
+    # * <tt>:password</tt> - SlideShare password of the user _making_ the request
+    # * <tt>:detailed</tt> - Set to <tt>true</tt> to return additional, detailed information
+    def find_all_by_user(user, options = {})
+      detailed = convert_to_number(options.delete(:detailed))
+      options[:detailed] = detailed unless detailed.nil?
+      base.send :get, "/get_slideshows_by_user", options.merge(:username_for => user)
+    end
+    
     # Returns true if successful or raises an appropriate exception if not.
     # Takes the following options:
     # 
