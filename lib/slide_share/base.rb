@@ -43,8 +43,9 @@ module SlideShare
     
   private
     def get(*args)
+      puts (query = add_required_params(args.extract_options!)).inspect
       catch_errors self.class.get(args.first,
-        {:query => add_required_params(args.extract_options!)})
+        {:query => query})
     end
     
     def post(*args)

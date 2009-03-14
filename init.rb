@@ -1,1 +1,1 @@
-require "slide_share"
+require "slideshare"
