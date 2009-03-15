@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "slideshare"
-  s.version = "0.1.2.4"
+  s.version = "0.1.2.5"
   
   s.summary = "Ruby interface for SlideShare API"
   s.description = "Ruby interface for SlideShare API"
@@ -32,8 +32,26 @@ Gem::Specification.new do |s|
     spec/slide_share/base_spec.rb
     spec/slide_share/slideshows_spec.rb
   }
-  s.require_paths = 'lib'
+  s.require_paths = %w{lib}
   s.has_rdoc = true
   s.extra_rdoc_files = %w{MIT-LICENSE README.rdoc}
   s.rdoc_options = %w{--main README.rdoc --charset utf-8 --line-numbers}
+  
+  if s.respond_to? :specification_version then
+    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
+    s.specification_version = 2
+   
+    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency("httparty", [">= 0.2.6"])
+      s.add_runtime_dependency("curb", [">= 0.1.4"])
+    else
+      s.add_dependency("httparty", [">= 0.2.6"])
+      s.add_dependency("curb", [">= 0.1.4"])
+    end
+  else
+    s.add_dependency("httparty", [">= 0.2.6"])
+    s.add_dependency("curb", [">= 0.1.4"])
+  end
+  
 end
+
