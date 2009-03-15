@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "slideshare"
-  s.version = "0.1.2.3"
+  s.version = "0.1.2.4"
   
   s.summary = "Ruby interface for SlideShare API"
   s.description = "Ruby interface for SlideShare API"
